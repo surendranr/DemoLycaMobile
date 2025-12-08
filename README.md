@@ -1,9 +1,10 @@
-# Your Project's Title...
-Your project's description...
+# DemoLycaMobile - Edge Delivery Services Site
+
+Lycamobile website built on Adobe Edge Delivery Services (EDS).
 
 ## Environments
-- Preview: https://main--{repo}--{owner}.aem.page/
-- Live: https://main--{repo}--{owner}.aem.live/
+- Preview: https://main--cm-p165370-s18850-demolycamobile--adobe-cm.aem.page/
+- Live: https://main--cm-p165370-s18850-demolycamobile--adobe-cm.aem.live/
 
 ## Documentation
 
