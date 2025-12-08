@@ -19,17 +19,19 @@ Lycamobile website built on Adobe Edge Delivery Services (EDS) with Google Docs-
 
 ## Quick Links
 
+- **GitHub Repository**: https://github.com/surendranr/DemoLycaMobile
 - **da.live Editor**: https://da.live/#/surendranr/demolycamobile
-- **Editor (da.live)**: https://main--demolycamobile--surendranr.aem.page/en/?da.live
+- **Preview URL**: https://main--demolycamobile--surendranr.aem.page/
+- **Live URL**: https://main--demolycamobile--surendranr.aem.live/
 - **Google Drive Folder**: https://drive.google.com/drive/folders/16tpKjcaIRXcM-khIdLy_2BLqkoLkIpQF
 - **AEM Code Sync Status**: ✅ Registered (user: surendran.astro@gmail.com, org: surendranr)
-- **Git Repository**: Verify connection in da.live editor settings
 
 ## Configuration
 
 ### Google Drive Connection
 
 - **Folder ID**: `16tpKjcaIRXcM-khIdLy_2BLqkoLkIpQF`
+- **Folder URL**: https://drive.google.com/drive/folders/16tpKjcaIRXcM-khIdLy_2BLqkoLkIpQF
 - **Shared with**: `helix@adobe.com` (Editor permission)
 - **Configuration**: See `fstab.yaml`
 
@@ -55,10 +57,11 @@ All custom blocks are located in `/blocks`:
 
 ### Method 1: da.live Editor (Recommended)
 
-1. Open: https://main--demolycamobile--surendranr.aem.page/en/?da.live
-2. Click on content to edit inline
-3. Changes save automatically
-4. Publish when ready
+1. Open: https://da.live/#/surendranr/demolycamobile
+2. Navigate to the page you want to edit (e.g., `/en/`)
+3. Click on content to edit inline
+4. Changes save automatically
+5. Publish when ready
 
 ### Method 2: Google Docs
 
@@ -88,9 +91,10 @@ All custom blocks are located in `/blocks`:
    - Share folder with `helix@adobe.com` (Editor permission)
 
 2. **Create Google Docs**:
+   - Open Google Drive: https://drive.google.com/drive/folders/16tpKjcaIRXcM-khIdLy_2BLqkoLkIpQF
    - Create Google Docs from markdown files in `en/` and `fragments/`
-   - Place in corresponding Google Drive folders
-   - Ensure all docs are shared with `helix@adobe.com`
+   - Place in corresponding Google Drive folders (`pages/en/`, `fragments/header/`, `fragments/footer/`)
+   - Ensure all docs are shared with `helix@adobe.com` (Editor permission)
 
 3. **Install AEM Sidekick** (optional):
    - Chrome: https://chromewebstore.google.com/detail/aem-sidekick/ccfggkjabjahcjoljmgmklhpaccedipo
