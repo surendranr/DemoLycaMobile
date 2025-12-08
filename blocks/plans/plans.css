@@ -1,0 +1,140 @@
+.plans-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.plans-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.plan-card {
+  background-color: var(--background-color);
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.plan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: var(--link-color);
+}
+
+.plan-featured {
+  border-color: var(--link-color);
+  border-width: 3px;
+  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+}
+
+.plan-featured::before {
+  content: 'Popular';
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  background-color: var(--link-color);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: var(--body-font-size-xs);
+  font-weight: 600;
+}
+
+.plan-image {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.plan-image picture,
+.plan-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.plan-title {
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: var(--text-color);
+}
+
+.plan-price {
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  color: var(--link-color);
+  margin: 0 0 16px 0;
+}
+
+.plan-price .price-amount {
+  font-size: var(--heading-font-size-xxl);
+}
+
+.plan-price .price-period {
+  font-size: var(--body-font-size-s);
+  color: var(--dark-color);
+  font-weight: 400;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  flex-grow: 1;
+}
+
+.plan-features li {
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+  font-size: var(--body-font-size-s);
+  color: var(--dark-color);
+}
+
+.plan-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.plan-cta {
+  margin-top: auto;
+}
+
+.plan-cta .button {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+@media (width >= 900px) {
+  .plans-container {
+    padding: 0 32px;
+  }
+
+  .plans-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .plan-featured {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 600px) {
+  .plans-list {
+    grid-template-columns: 1fr;
+  }
+}
+
