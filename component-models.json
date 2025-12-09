@@ -136,5 +136,125 @@
                 "label": "CTA Button Link"
             }
         ]
+    },
+    {
+        "id": "accordion",
+        "fields": [
+            {
+                "component": "text",
+                "name": "question",
+                "label": "Question"
+            },
+            {
+                "component": "richtext",
+                "name": "answer",
+                "label": "Answer"
+            }
+        ]
+    },
+    {
+        "id": "tabs",
+        "fields": [
+            {
+                "component": "text",
+                "name": "tabName",
+                "label": "Tab Name"
+            },
+            {
+                "component": "richtext",
+                "name": "tabContent",
+                "label": "Tab Content"
+            }
+        ]
+    },
+    {
+        "id": "topic-cards",
+        "fields": [
+            {
+                "component": "text",
+                "name": "title",
+                "label": "Topic Title"
+            },
+            {
+                "component": "richtext",
+                "name": "description",
+                "label": "Topic Description"
+            },
+            {
+                "component": "text",
+                "name": "linkText",
+                "label": "Link Text"
+            },
+            {
+                "component": "text",
+                "name": "linkUrl",
+                "label": "Link URL"
+            }
+        ]
+    },
+    {
+        "id": "steps",
+        "fields": [
+            {
+                "component": "text",
+                "name": "title",
+                "label": "Step Title"
+            },
+            {
+                "component": "richtext",
+                "name": "description",
+                "label": "Step Description"
+            }
+        ]
+    },
+    {
+        "id": "share",
+        "fields": [
+            {
+                "component": "text",
+                "name": "referralLink",
+                "label": "Referral Link"
+            },
+            {
+                "component": "text",
+                "name": "shareText",
+                "label": "Share Text"
+            }
+        ]
+    },
+    {
+        "id": "contact",
+        "fields": [
+            {
+                "component": "text",
+                "name": "contactInfo",
+                "label": "Contact Information"
+            }
+        ]
+    },
+    {
+        "id": "rewards",
+        "fields": [
+            {
+                "component": "text",
+                "name": "heading",
+                "label": "Rewards Heading"
+            },
+            {
+                "component": "text",
+                "name": "amount",
+                "label": "Reward Amount"
+            },
+            {
+                "component": "richtext",
+                "name": "description",
+                "label": "Description"
+            },
+            {
+                "component": "richtext",
+                "name": "terms",
+                "label": "Terms & Conditions"
+            }
+        ]
     }
 ]

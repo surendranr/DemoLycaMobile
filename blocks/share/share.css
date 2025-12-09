@@ -1,0 +1,143 @@
+.share-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.share-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.share-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background: #f9f9f9;
+    transition: border-color 0.2s ease;
+}
+
+.share-input:focus {
+    outline: none;
+    border-color: #6b21a8;
+    background: #fff;
+}
+
+.share-copy-button {
+    padding: 0.75rem 1.5rem;
+    background: #6b21a8;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.share-copy-button:hover {
+    background: #4c1d95;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(107, 33, 168, 0.3);
+}
+
+.share-copy-button:active {
+    transform: translateY(0);
+}
+
+.share-copy-button:focus {
+    outline: 2px solid #6b21a8;
+    outline-offset: 2px;
+}
+
+.share-copy-button.copied {
+    background: #10b981;
+}
+
+.share-social-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.share-social-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.2s ease;
+    min-width: 100px;
+}
+
+.share-social-button:hover {
+    border-color: var(--button-color, #6b21a8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.share-social-button:focus {
+    outline: 2px solid var(--button-color, #6b21a8);
+    outline-offset: 2px;
+}
+
+.share-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.share-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .share-container {
+        padding: 1.5rem 0;
+    }
+
+    .share-group {
+        flex-direction: column;
+    }
+
+    .share-copy-button {
+        width: 100%;
+    }
+
+    .share-social-buttons {
+        gap: 0.75rem;
+    }
+
+    .share-social-button {
+        flex: 1;
+        min-width: auto;
+        padding: 0.75rem;
+    }
+
+    .share-icon {
+        font-size: 1.5rem;
+    }
+
+    .share-label {
+        font-size: 0.8125rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .share-social-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    }
+}

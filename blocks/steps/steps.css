@@ -1,0 +1,126 @@
+.steps-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.steps-list {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+}
+
+/* Connector line between steps */
+.steps-list::before {
+    content: '';
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    right: 2rem;
+    height: 2px;
+    background: linear-gradient(to right, #6b21a8 0%, #6b21a8 calc(100% - 4rem), #e0e0e0 calc(100% - 4rem));
+    z-index: 0;
+}
+
+.step-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.step-number {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6b21a8 0%, #8b5cf6 100%);
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(107, 33, 168, 0.3);
+    position: relative;
+}
+
+.step-content {
+    width: 100%;
+}
+
+.step-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 0.5rem;
+    line-height: 1.3;
+}
+
+.step-description {
+    font-size: 0.9375rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Mobile layout - vertical stack */
+@media (max-width: 768px) {
+    .steps-list {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .steps-list::before {
+        top: 2rem;
+        bottom: 2rem;
+        left: 2rem;
+        right: auto;
+        width: 2px;
+        height: auto;
+        background: linear-gradient(to bottom, #6b21a8 0%, #6b21a8 calc(100% - 4rem), #e0e0e0 calc(100% - 4rem));
+    }
+
+    .step-item {
+        flex-direction: row;
+        text-align: left;
+        gap: 1rem;
+    }
+
+    .step-number {
+        flex-shrink: 0;
+        margin-bottom: 0;
+    }
+
+    .step-content {
+        flex: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .steps-container {
+        padding: 1.5rem 0;
+    }
+
+    .step-number {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.25rem;
+    }
+
+    .steps-list::before {
+        left: 1.5rem;
+    }
+
+    .step-title {
+        font-size: 1rem;
+    }
+
+    .step-description {
+        font-size: 0.875rem;
+    }
+}
