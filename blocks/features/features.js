@@ -3,17 +3,17 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 export default function decorate(block) {
   const featuresContainer = document.createElement('div');
   featuresContainer.className = 'features-container';
-  
+
   const featuresList = document.createElement('div');
   featuresList.className = 'features-list';
-  
+
   [...block.children].forEach((row) => {
     const featureItem = document.createElement('div');
     featureItem.className = 'feature-item';
-    
+
     while (row.firstElementChild) {
       const child = row.firstElementChild;
-      
+
       // Handle icons/images
       if (child.querySelector('picture') || child.querySelector('img')) {
         const iconWrapper = document.createElement('div');
@@ -42,12 +42,11 @@ export default function decorate(block) {
         featureItem.append(content);
       }
     }
-    
+
     featuresList.append(featureItem);
   });
-  
+
   featuresContainer.append(featuresList);
   block.textContent = '';
   block.append(featuresContainer);
 }
-

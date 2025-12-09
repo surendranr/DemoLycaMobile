@@ -1,0 +1,21 @@
+[
+    {
+        "id": "section",
+        "components": [
+            "hero",
+            "cards",
+            "columns",
+            "features",
+            "promo-banner",
+            "plans"
+        ]
+    },
+    {
+        "id": "hero",
+        "components": []
+    },
+    {
+        "id": "cards",
+        "components": []
+    }
+]

@@ -255,3 +255,18 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+/* Block container styling - ensure proper layout */
+main .section > div {
+  position: relative;
+}
+
+/* Block wrapper styling */
+main .section > div > div {
+  width: 100%;
+}
+
+/* Ensure blocks render properly */
+.block {
+  width: 100%;
+}

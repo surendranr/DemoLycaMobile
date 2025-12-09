@@ -3,22 +3,22 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 export default function decorate(block) {
   const plansContainer = document.createElement('div');
   plansContainer.className = 'plans-container';
-  
+
   const plansList = document.createElement('div');
   plansList.className = 'plans-list';
-  
+
   [...block.children].forEach((row, index) => {
     const planCard = document.createElement('div');
     planCard.className = 'plan-card';
-    
+
     // Check if this is a featured plan
     if (row.classList.contains('featured')) {
       planCard.classList.add('plan-featured');
     }
-    
+
     while (row.firstElementChild) {
       const child = row.firstElementChild;
-      
+
       // Handle images
       if (child.querySelector('picture')) {
         const imageWrapper = document.createElement('div');
@@ -74,12 +74,11 @@ export default function decorate(block) {
         planCard.append(content);
       }
     }
-    
+
     plansList.append(planCard);
   });
-  
+
   plansContainer.append(plansList);
   block.textContent = '';
   block.append(plansContainer);
 }
-

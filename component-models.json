@@ -1,0 +1,140 @@
+[
+    {
+        "id": "hero",
+        "fields": [
+            {
+                "component": "reference",
+                "name": "image",
+                "label": "Background Image",
+                "multi": false
+            },
+            {
+                "component": "text",
+                "name": "heading",
+                "label": "Heading"
+            },
+            {
+                "component": "richtext",
+                "name": "description",
+                "label": "Description"
+            },
+            {
+                "component": "text",
+                "name": "ctaText",
+                "label": "CTA Button Text"
+            },
+            {
+                "component": "text",
+                "name": "ctaLink",
+                "label": "CTA Button Link"
+            }
+        ]
+    },
+    {
+        "id": "cards",
+        "fields": [
+            {
+                "component": "reference",
+                "name": "image",
+                "label": "Card Image",
+                "multi": false
+            },
+            {
+                "component": "text",
+                "name": "title",
+                "label": "Card Title"
+            },
+            {
+                "component": "richtext",
+                "name": "body",
+                "label": "Card Body"
+            }
+        ]
+    },
+    {
+        "id": "columns",
+        "fields": [
+            {
+                "component": "richtext",
+                "name": "content",
+                "label": "Column Content"
+            }
+        ]
+    },
+    {
+        "id": "features",
+        "fields": [
+            {
+                "component": "reference",
+                "name": "icon",
+                "label": "Feature Icon",
+                "multi": false
+            },
+            {
+                "component": "text",
+                "name": "title",
+                "label": "Feature Title"
+            },
+            {
+                "component": "richtext",
+                "name": "description",
+                "label": "Feature Description"
+            }
+        ]
+    },
+    {
+        "id": "plans",
+        "fields": [
+            {
+                "component": "text",
+                "name": "planName",
+                "label": "Plan Name"
+            },
+            {
+                "component": "text",
+                "name": "price",
+                "label": "Price"
+            },
+            {
+                "component": "richtext",
+                "name": "features",
+                "label": "Plan Features"
+            },
+            {
+                "component": "text",
+                "name": "ctaText",
+                "label": "CTA Button Text"
+            },
+            {
+                "component": "text",
+                "name": "ctaLink",
+                "label": "CTA Button Link"
+            }
+        ]
+    },
+    {
+        "id": "promo-banner",
+        "fields": [
+            {
+                "component": "text",
+                "name": "heading",
+                "label": "Banner Heading"
+            },
+            {
+                "component": "richtext",
+                "name": "content",
+                "label": "Banner Content"
+            },
+            {
+                "component": "text",
+                "name": "ctaText",
+                "label": "CTA Button Text"
+            },
+            {
+                "component": "text",
+                "name": "ctaLink",
+                "label": "CTA Button Link"
+            }
+        ]
+    }
+]

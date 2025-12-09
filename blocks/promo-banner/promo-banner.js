@@ -3,13 +3,13 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 export default function decorate(block) {
   const promoContainer = document.createElement('div');
   promoContainer.className = 'promo-container';
-  
+
   const promoContent = document.createElement('div');
   promoContent.className = 'promo-content';
-  
+
   let hasImage = false;
   let imageElement = null;
-  
+
   [...block.children].forEach((row) => {
     // Check for image first
     if (row.querySelector('picture') || row.querySelector('img')) {
@@ -48,7 +48,7 @@ export default function decorate(block) {
       promoContent.append(content);
     }
   });
-  
+
   // If there's an image, create a layout with image and content
   if (hasImage && imageElement) {
     const promoImage = document.createElement('div');
@@ -57,9 +57,8 @@ export default function decorate(block) {
     promoContainer.append(promoImage);
     promoContainer.classList.add('promo-with-image');
   }
-  
+
   promoContainer.append(promoContent);
   block.textContent = '';
   block.append(promoContainer);
 }
-

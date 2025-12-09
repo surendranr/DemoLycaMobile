@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Block Loading Test</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .test-result { margin: 10px 0; padding: 10px; border-radius: 5px; }
+    .pass { background: #d4edda; border: 1px solid #c3e6cb; }
+    .fail { background: #f8d7da; border: 1px solid #f5c6cb; }
+    .info { background: #d1ecf1; border: 1px solid #bee5eb; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <h1>Block CSS/JS Loading Verification</h1>
+  <p>Open this page on your EDS site and check the console (F12) for results.</p>
+  
+  <div id="results"></div>
+  
+  <script>
+    function log(message, type = 'info') {
+      const results = document.getElementById('results');
+      const div = document.createElement('div');
+      div.className = `test-result ${type}`;
+      div.innerHTML = message;
+      results.appendChild(div);
+      console.log(message);
+    }
+    
+    // Wait for page to load
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        log('<h2>Block Loading Test Results</h2>', 'info');
+        
+        // 1. Check sections
+        const sections = document.querySelectorAll('.section');
+        log(`<strong>Sections Found:</strong> ${sections.length}`, sections.length > 0 ? 'pass' : 'fail');
+        
+        sections.forEach((section, idx) => {
+          const status = section.dataset.sectionStatus;
+          log(`Section ${idx + 1}: Status = <code>${status || 'none'}</code>`, status === 'loaded' ? 'pass' : 'fail');
+        });
+        
+        // 2. Check blocks
+        const blocks = document.querySelectorAll('.block');
+        log(`<strong>Blocks Found:</strong> ${blocks.length}`, blocks.length > 0 ? 'pass' : 'fail');
+        
+        const expectedBlocks = ['hero', 'promo-banner', 'plans', 'features', 'cards', 'columns'];
+        expectedBlocks.forEach(blockName => {
+          const found = Array.from(blocks).some(b => b.dataset.blockName === blockName);
+          log(`${blockName}: ${found ? '✅ Found' : '❌ Missing'}`, found ? 'pass' : 'fail');
+        });
+        
+        blocks.forEach((block, idx) => {
+          const blockName = block.dataset.blockName;
+          const status = block.dataset.blockStatus;
+          log(`Block ${idx + 1} (${blockName}): Status = <code>${status || 'none'}</code>`, status === 'loaded' ? 'pass' : 'fail');
+          
+          // Check CSS
+          const cssLoaded = Array.from(document.styleSheets).some(sheet => {
+            try {
+              return sheet.href && sheet.href.includes(`/blocks/${blockName}/${blockName}.css`);
+            } catch (e) {
+              return false;
+            }
+          });
+          log(`  → CSS: ${cssLoaded ? '✅ Loaded' : '❌ Not found'}`, cssLoaded ? 'pass' : 'fail');
+        });
+        
+        // 3. Check potential undecorated blocks
+        const potentialBlocks = document.querySelectorAll('div.section > div > div');
+        const undecorated = Array.from(potentialBlocks).filter(div => !div.classList.contains('block'));
+        log(`<strong>Undecorated divs:</strong> ${undecorated.length}`, undecorated.length === 0 ? 'pass' : 'fail');
+        
+        if (undecorated.length > 0) {
+          undecorated.forEach((div, idx) => {
+            log(`Undecorated div ${idx + 1}: First class = <code>${div.classList[0] || 'none'}</code>`, 'fail');
+          });
+        }
+        
+        // 4. Summary
+        log('<h2>Summary</h2>', 'info');
+        const allLoaded = Array.from(blocks).every(b => b.dataset.blockStatus === 'loaded');
+        log(`All blocks loaded: ${allLoaded ? '✅ YES' : '❌ NO'}`, allLoaded ? 'pass' : 'fail');
+        
+        log('<p><strong>If blocks show as "initialized" instead of "loaded", check console for JavaScript errors.</strong></p>', 'info');
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
+
