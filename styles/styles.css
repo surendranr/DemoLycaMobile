@@ -19,7 +19,7 @@
   --lyca-pink: #FF006B;
   --lyca-green: #00C853;
   --lyca-yellow: #FFD600;
-  
+
   /* colors */
   --background-color: white;
   --light-color: #F5F7FA;
@@ -50,20 +50,20 @@
 
   /* nav height */
   --nav-height: 70px;
-  
+
   /* spacing */
   --spacing-xs: 8px;
   --spacing-s: 16px;
   --spacing-m: 24px;
   --spacing-l: 32px;
   --spacing-xl: 48px;
-  
+
   /* border radius */
   --border-radius-s: 8px;
   --border-radius-m: 12px;
   --border-radius-l: 16px;
   --border-radius-xl: 24px;
-  
+
   /* shadows */
   --shadow-s: 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-m: 0 4px 16px rgba(0, 0, 0, 0.12);
@@ -83,7 +83,7 @@
   src: local('Arial');
 }
 
-@media (width >= 900px) {
+@media (width >=900px) {
   :root {
     /* body sizes */
     --body-font-size-m: 18px;
@@ -142,12 +142,29 @@ h6 {
   scroll-margin: 40px;
 }
 
-h1 { font-size: var(--heading-font-size-xxl); }
-h2 { font-size: var(--heading-font-size-xl); }
-h3 { font-size: var(--heading-font-size-l); }
-h4 { font-size: var(--heading-font-size-m); }
-h5 { font-size: var(--heading-font-size-s); }
-h6 { font-size: var(--heading-font-size-xs); }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+}
+
+h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+}
+
+h4 {
+  font-size: var(--heading-font-size-m);
+}
+
+h5 {
+  font-size: var(--heading-font-size-s);
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs);
+}
 
 p,
 dl,
@@ -172,7 +189,7 @@ pre {
   white-space: pre;
 }
 
-main > div {
+main>div {
   margin: 40px 16px;
 }
 
@@ -258,23 +275,39 @@ main img {
 }
 
 /* sections */
-main > .section {
-  margin: 40px 0;
+/* sections */
+main>.section {
+  margin: 0;
+  width: 100%;
 }
 
-main > .section > div {
+main>.section>div {
   max-width: 1200px;
   margin: auto;
-  padding: 0 24px;
+  padding: 40px 24px;
 }
 
-main > .section:first-of-type {
-  margin-top: 0;
+/* Allow hero section to be full width */
+main>.section:has(.hero-wrapper),
+main>.section:has(.hero) {
+  padding: 0;
+  max-width: 100%;
 }
 
-@media (width >= 900px) {
-  main > .section > div {
-    padding: 0 32px;
+main>.section:has(.hero-wrapper)>div,
+main>.section:has(.hero)>div {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+main>.section:first-of-type {
+  padding-top: 0;
+}
+
+@media (width >=900px) {
+  main>.section>div {
+    padding: 60px 32px;
   }
 }
 
@@ -286,13 +319,25 @@ main .section.highlight {
   padding: 40px 0;
 }
 
+/* Full width section support */
+main .section.full-width {
+  padding: 0;
+  max-width: 100%;
+}
+
+main .section.full-width>div {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 /* Block container styling - ensure proper layout */
-main .section > div {
+main .section>div {
   position: relative;
 }
 
 /* Block wrapper styling */
-main .section > div > div {
+main .section>div>div {
   width: 100%;
 }
 

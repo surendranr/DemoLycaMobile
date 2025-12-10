@@ -69,4 +69,10 @@ export default function decorate(block) {
   heroWrapper.append(heroContent);
   block.textContent = '';
   block.append(heroWrapper);
+
+  // Force parent section to be full width
+  const section = block.closest('.section');
+  if (section) {
+    section.classList.add('full-width');
+  }
 }
