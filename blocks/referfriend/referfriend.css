@@ -1,0 +1,89 @@
+.referfriend {
+    background-color: #007bff;
+    /* Blue background from screenshot */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    /* Adjust as needed */
+}
+
+.referfriend.block p {
+    color: #fff;
+}
+
+.refer-friend-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.refer-friend-icon {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.refer-friend-icon.end {
+    margin-left: 10px;
+    /* Ensure spacing for the end icon/arrow */
+    font-size: 24px;
+    /* Default size for arrow */
+    line-height: 1;
+    /* Aligns arrow properly */
+}
+
+.refer-friend-icon svg,
+.refer-friend-icon img {
+    fill: #fff;
+    /* For SVG icons */
+    width: 24px;
+    height: 24px;
+}
+
+
+.referfriend.block p {
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+}
+
+.referfriend.block picture,
+.referfriend.block img {
+    display: block;
+}
+
+.referfriend.block picture img {
+    position: relative;
+    top: 1px;
+}
+
+/* The previous .refer-friend-arrow is now handled by .refer-friend-icon.end */
+/* If there's specific arrow image styling, it would go here targeting img within .refer-friend-icon.end */
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .referfriend {
+        padding: 15px;
+    }
+
+    .refer-friend-link {
+        font-size: 16px;
+    }
+
+    .refer-friend-icon svg,
+    .refer-friend-icon img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .refer-friend-arrow {
+        font-size: 20px;
+    }
+}

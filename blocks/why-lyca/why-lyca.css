@@ -1,0 +1,131 @@
+.why-lyca-container {
+    width: 100%;
+}
+
+.why-lyca-wrapper {
+    max-width: 1200px;
+    /* Standard max width */
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.why-lyca-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-top: 1rem;
+    row-gap: 20px;
+    column-gap: 40px;
+}
+
+@media (min-width: 900px) {
+    .why-lyca-row {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        height: -moz-fit-content;
+        height: fit-content;
+        margin-top: 1rem;
+        row-gap: 20px;
+        column-gap: 40px;
+    }
+}
+
+.why-lyca-section-title {
+    text-align: center;
+    margin-top: 0;
+    font-family: GTEestiLCDisplayBold, sans-serif;
+    /* Added fallback */
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    letter-spacing: 0;
+    color: #384c72;
+    margin-bottom: 40px;
+}
+
+.why-lyca-item {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 200px;
+}
+
+/* Icon Styling */
+.why-lyca-icon {
+    width: 102px;
+    height: 102px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+.why-lyca-icon img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Item Title Styling (e.g. Best UK Network) */
+.why-lyca-title {
+    font-family: var(--body-font-family);
+    font-size: 1.125rem;
+    /* ~18px */
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+}
+
+/* Text Styling */
+.why-lyca-text {
+    font-family: var(--body-font-family);
+    font-size: 0.95rem;
+    /* ~15px */
+    color: #171b20;
+    line-height: 1.5;
+    margin-bottom: 25px;
+    max-width: 300px;
+}
+
+.why-lyca-text p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Link Styling */
+.why-lyca-link {
+    margin-top: auto;
+}
+
+.why-lyca-link a {
+    color: #4285f4;
+    /* Link blue */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.why-lyca-link a:hover {
+    text-decoration: underline;
+}
+
+/* Legacy Header check (if author uses H2 outside block) */
+.why-lyca-container>h2 {
+    /* This matches if the JS didn't find a row but there was an H2 already, or if we prepended it */
+    /* The class .why-lyca-section-title handles the specific style now, but we keep this just in case */
+    text-align: center;
+}

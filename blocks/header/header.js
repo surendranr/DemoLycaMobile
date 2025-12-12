@@ -146,14 +146,45 @@ export default async function decorate(block) {
     });
   }
 
+  // Decorate tools
+  const tools = nav.querySelector('.nav-tools');
+  if (tools) {
+    tools.innerHTML = `
+      <div class="header-tools-wrapper">
+        <a href="#" class="header-topup-btn">Quick top up</a>
+        <a href="#" class="header-icon-btn user-icon" aria-label="Account">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </a>
+        <div class="header-dropdown-icon">
+             <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <a href="#" class="header-icon-btn cart-icon" aria-label="Cart">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        </a>
+        <div class="header-lang">
+            <span class="lang-text">EN</span>
+            <img src="https://flagcdn.com/w20/gb.png" alt="UK Flag" class="lang-flag"/>
+        </div>
+      </div>
+    `;
+  }
+
   // hamburger for mobile
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
   hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
-      <span class="nav-hamburger-icon"></span>
+      <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
     </button>`;
   hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
+
+  // Insert hamburger AFTER brand for desktop visual flow (Brand -> Hamburger -> Sections)
+  // But strictly speaking, in mobile it's usually first. CSS Flexbox 'order' will handle visual position.
   nav.prepend(hamburger);
+
   nav.setAttribute('aria-expanded', 'false');
   // prevent mobile nav behavior on window resize
   toggleMenu(nav, navSections, isDesktop.matches);

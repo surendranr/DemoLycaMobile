@@ -1,0 +1,273 @@
+.plans {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: transparent;
+    /* Assuming section background handles it, or white */
+}
+
+.plan-card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #00A651;
+    overflow: visible;
+    max-width: 1200px;
+    /* Increased max-width to allow more space like in screenshot */
+    width: 100%;
+    margin: 25px auto 0 auto;
+    /* Centered with top margin for label */
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    /* Ensuring a clean font */
+}
+
+/* Floating Label "Free OPPO Voucher" */
+.plan-label {
+    position: absolute;
+    top: -30px;
+    left: -1px;
+    background-color: #ffda47;
+    color: #00458C;
+    padding: 8px 16px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+    z-index: 10;
+    line-height: normal;
+}
+
+.plan-details {
+    display: flex;
+    flex-grow: 1;
+    padding: 20px 30px;
+    align-items: center;
+    justify-content: space-between;
+    /* Spreads out the three main sections */
+}
+
+/* --- Left Section: Duration & Price --- */
+.plan-left-section {
+    flex: 0 0 auto;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.plan-duration {
+    font-size: 13px;
+    color: #52606D;
+    margin-bottom: 2px;
+    font-weight: 400;
+}
+
+.plan-price {
+    display: flex;
+    align-items: baseline;
+    color: #2F353E;
+}
+
+.plan-price-value {
+    font-size: 32px;
+    font-weight: 800;
+    color: #2F353E;
+    margin-right: 6px;
+}
+
+.plan-price-monthly {
+    font-size: 14px;
+    color: #52606D;
+}
+
+/* --- Center Section: Data & Features --- */
+.plan-center-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* "Unlimited Data" */
+.plan-data-header {
+    flex: 0 0 auto;
+    margin-right: 40px;
+    /* Gap between Data and Features */
+    padding-left: 20px;
+    /* Visual separation from left section if needed */
+    border-left: 1px solid #E6E6E6;
+    /* Slight separator line */
+    height: 60px;
+    /* Height for the separator line to look right */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.data-unlimited {
+    font-size: 32px;
+    font-weight: 800;
+    color: #52606D;
+    line-height: 1;
+}
+
+.data-subtitle {
+    font-size: 13px;
+    color: #52606D;
+    margin-top: 2px;
+}
+
+/* Features List */
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: none;
+    /* No separator here */
+}
+
+.plan-features li {
+    font-size: 13px;
+    color: #52606D;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.plan-features li:last-child {
+    margin-bottom: 0;
+}
+
+.plan-features li::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 6px;
+    border-left: 2px solid #00A651;
+    border-bottom: 2px solid #00A651;
+    transform: rotate(-45deg);
+    margin-right: 10px;
+    margin-bottom: 4px;
+}
+
+/* --- Right Section: Icons, View More, Buy Now --- */
+.plan-right-section {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.plan-icons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.plan-icons img {
+    height: 32px;
+    width: auto;
+}
+
+.plan-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.plan-view-more {
+    color: #00458C;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.plan-view-more:hover {
+    text-decoration: underline;
+}
+
+.plan-buy-now {
+    background-color: #00CF6B;
+    color: #fff;
+    border: none;
+    padding: 10px 36px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.plan-buy-now:hover {
+    background-color: #00B05B;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .plan-card {
+        margin-top: 40px;
+    }
+
+    .plan-details {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+    }
+
+    .plan-left-section {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .plan-center-section {
+        flex-direction: column;
+        padding: 20px;
+        border-bottom: 1px solid #eee;
+        text-align: center;
+    }
+
+    .plan-data-header {
+        border-left: none;
+        padding-left: 0;
+        margin-right: 0;
+        margin-bottom: 20px;
+        align-items: center;
+        height: auto;
+    }
+
+    .plan-right-section {
+        flex-direction: column;
+        padding: 20px;
+        width: 100%;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .plan-actions {
+        align-items: center;
+        width: 100%;
+    }
+
+    .plan-buy-now {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .plan-label {
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 6px 6px 0 0;
+        width: auto;
+        top: -30px;
+    }
+}

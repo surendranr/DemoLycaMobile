@@ -1,0 +1,147 @@
+.banner-carousel-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+    /* Ensure it doesn't overflow the page width destructively */
+    overflow: hidden;
+}
+
+.banner-carousel-wrapper {
+    display: flex;
+    width: 100%;
+    /* Use transform for sliding */
+    transform: translateX(0);
+    transition: transform 0.8s ease-in-out;
+    /* Hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.banner-carousel-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.banner-carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    position: relative;
+    /* Ensure image content doesn't break layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-carousel-image-container {
+    width: 100%;
+    display: block;
+    margin: 0;
+}
+
+.banner-carousel-slide picture {
+    display: block;
+    width: 100%;
+}
+
+.banner-carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    /* Basic max-height if needed, but banners usually define their own */
+}
+
+/* Dots Navigation */
+.banner-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.banner-carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Semi-transparent white */
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.3s;
+}
+
+.banner-carousel-dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.banner-carousel-dot.active {
+    background-color: #fff;
+    /* Active white */
+    transform: scale(1.2);
+}
+
+/* Arrow Navigation */
+.banner-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    /* Changed to transparent as per request to rely on icon, or maybe white circle with icon inside? Let's assume white circle for visibility, or just the icon? User said "background highlighted as blue", implies they might just want the icon. But standard arrows usually have bg. Let's keep bg white/transparent but use the image. The URL is just an arrow. It likely needs a background to be visible over varied banners. */
+    /* Let's keep the circle background but fix the highlight issue */
+    width: 48px;
+    /* Slightly larger for touch */
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 48px;
+    /* Adjust size of the arrow icon inside */
+    transition: background-color 0.3s;
+
+    /* Fix blue highlight on touch/click */
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+.banner-carousel-arrow:focus {
+    outline: none;
+    /* Ensure no blue outline on focus */
+}
+
+.banner-carousel-arrow:hover {
+    background-color: #fff;
+}
+
+.banner-carousel-arrow.prev {
+    left: 20px;
+    background-image: url('https://www.lycamobile.co.uk/_next/static/media/slider_left_arrow.e4901b64.svg');
+}
+
+.banner-carousel-arrow.next {
+    right: 20px;
+    background-image: url('https://www.lycamobile.co.uk/_next/static/media/slider_right_arrow.0d76d2f7.svg');
+}
+
+@media (max-width: 600px) {
+    .banner-carousel-arrow {
+        width: 36px;
+        height: 36px;
+        background-size: 12px;
+    }
+
+    .banner-carousel-arrow.prev {
+        left: 10px;
+    }
+
+    .banner-carousel-arrow.next {
+        right: 10px;
+    }
+}

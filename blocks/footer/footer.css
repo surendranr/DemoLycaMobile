@@ -1,20 +1,233 @@
-footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+footer .footer {
+    background-color: #1a2044;
+    /* Dark blue from Lyca */
+    color: white;
+    padding: 40px 20px 20px 20px;
+    /* Added bottom padding */
+    visibility: visible;
 }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+.footer-links-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    /* Margin bottom to separate from bottom bar */
+    gap: 20px;
+    overflow-x: auto;
 }
 
-footer .footer p {
-  margin: 0;
+.footer-column {
+    flex: 1;
+    min-width: 140px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
-  }
+.footer-column h3,
+.footer-column strong,
+.footer-column h1,
+.footer-column h2,
+.footer-column h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 0;
+    color: white;
+    display: block;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.footer-column p {
+    margin: 0;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* App Column specific */
+.app-column {
+    display: flex;
+    /* Fix empty ruleset lint */
+    flex-direction: column;
+}
+
+.app-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.app-btn {
+    display: inline-block;
+    width: 135px;
+    height: auto;
+}
+
+.app-btn img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.store-locator-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: white;
+    color: #1a2044;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    width: fit-content;
+    margin-top: 10px;
+}
+
+.store-locator-btn:hover {
+    background-color: #f0f0f0;
+    text-decoration: none;
+    color: #1a2044;
+}
+
+.icon-location {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #1a2044;
+    border-radius: 50%;
+    margin-right: 8px;
+    position: relative;
+}
+
+.icon-location::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background-color: #1a2044;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Bottom Footer (Secondary) */
+.footer-bottom-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid #bec6d5;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Ensure no weird margins from paragraphs in bottom container */
+.footer-bottom-container p {
+    margin: 0;
+}
+
+.footer-logo img {
+    height: 40px;
+    /* Adjust based on logo aspect ratio */
+    width: auto;
+}
+
+.footer-copyright {
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    flex: 1;
+    /* Allow centering if needed */
+}
+
+/* Robust Socials Styling */
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* If user used a list, fix it */
+.footer-socials ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+/* If user used paragraphs */
+.footer-socials p {
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    /* No underline for icons */
+}
+
+.footer-socials a:hover {
+    opacity: 0.8;
+}
+
+.footer-socials img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+/* Icons via span decoration */
+.footer-socials .icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .footer-links-container {
+        flex-direction: column !important;
+    }
+
+    .footer-bottom-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
 }

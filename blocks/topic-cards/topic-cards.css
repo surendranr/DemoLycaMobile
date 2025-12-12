@@ -21,13 +21,13 @@
 }
 
 .topic-card:hover {
-    border-color: #6b21a8;
-    box-shadow: 0 4px 12px rgba(107, 33, 168, 0.1);
+    border-color: var(--lyca-purple);
+    box-shadow: 0 4px 12px rgba(107, 78, 230, 0.1);
     transform: translateY(-2px);
 }
 
 .topic-card:focus {
-    outline: 2px solid #6b21a8;
+    outline: 2px solid var(--lyca-purple);
     outline-offset: 2px;
 }
 
@@ -49,7 +49,7 @@
 .topic-card-link {
     display: inline-flex;
     align-items: center;
-    color: #6b21a8;
+    color: var(--lyca-purple);
     font-weight: 500;
     text-decoration: none;
     font-size: 0.9375rem;
@@ -67,12 +67,12 @@
 }
 
 .topic-card-link:hover {
-    color: #4c1d95;
+    color: var(--lyca-purple-dark);
     text-decoration: underline;
 }
 
 .topic-card-link:focus {
-    outline: 2px solid #6b21a8;
+    outline: 2px solid var(--lyca-purple);
     outline-offset: 2px;
     border-radius: 2px;
 }
