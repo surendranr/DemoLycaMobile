@@ -1,0 +1,153 @@
+/* Main Container */
+.how-it-works-container {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.how-it-works-wrapper {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+/* Desktop Styles */
+/* Desktop Styles */
+@media (width >=768px) {
+    .how-it-works-wrapper {
+        justify-content: center;
+        /* Centered content per request */
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .how-it-works-slide {
+        flex: 0 1 300px;
+        /* Don't stretch infinitely, keep reasonable width */
+        position: relative;
+        max-width: 300px;
+        margin: 0 20px;
+        /* Add margin for spacing if gap isn't enough or for visual separation */
+    }
+
+    /* Connected Line */
+    .how-it-works-wrapper::before {
+        content: '';
+        position: absolute;
+        top: 205px;
+        /* Adjusted to align with middle of step numbers: 120px (img) + 20px (margin) + 20px (half number height) */
+        left: 25%;
+        right: 25%;
+        height: 2px;
+        background-color: #007aff;
+        z-index: 0;
+    }
+}
+
+/* Common Step Styles */
+.step-image {
+    margin-bottom: 20px;
+}
+
+.step-image img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 50%;
+    /* Fallback or bg for icon */
+    padding: 20px;
+    /* If icons are small inside circle */
+}
+
+.step-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #007aff;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+    /* Above the line */
+}
+
+.step-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #001f5f;
+}
+
+.step-description {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Hide Carousel Controls on Desktop */
+.how-it-works-controls {
+    display: none;
+}
+
+/* Mobile / Carousel Styles */
+@media (width < 768px) {
+    .how-it-works-container {
+        overflow: hidden;
+        /* Hide overflow for carousel */
+    }
+
+    .how-it-works-wrapper {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        /* Hide scrollbar */
+        -ms-overflow-style: none;
+        gap: 0;
+    }
+
+    .how-it-works-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .how-it-works-slide {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    /* Hide the line on mobile */
+    .how-it-works-wrapper::before {
+        display: none;
+    }
+
+    /* Navigation Arrow */
+    .how-it-works-controls {
+        display: block;
+        text-align: right;
+        margin-top: 10px;
+        padding-right: 20px;
+    }
+
+    .nav-arrow {
+        background-color: #1c2646;
+        /* Dark Blue */
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='24px' height='24px'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 4px;
+        /* Square/Rect per design? Screenshot shows boxy */
+    }
+}

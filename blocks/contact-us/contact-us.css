@@ -1,0 +1,157 @@
+/* contact-us.css */
+
+.contact-us {
+  padding: 10px 20px 20px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-us-heading {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.contact-us-cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* 2 columns on desktop */
+  gap: 20px;
+}
+
+.contact-us-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* White background */
+  background-color: #fff;
+  border: 1px solid #dfe1e5;
+  /* Light grey border */
+  color: #001871;
+  /* Lycamobile Dark Blue */
+  padding: 20px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-height: 80px;
+  /* increased height */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.contact-us-item:hover {
+  background-color: #f8f9fa;
+  /* Light grey on hover */
+  border-color: #c1c1c1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.contact-us-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 20px;
+  flex-shrink: 0;
+  /* No filter needed if images are already correct color, but ensure no invert */
+  filter: none;
+}
+
+.contact-us-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.contact-us-text {
+  text-align: center;
+  line-height: 1.4;
+  font-size: 1.5rem;
+  color: #001871;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.contact-us-arrow {
+  width: 28px;
+  height: 28px;
+  margin-left: auto;
+  flex-shrink: 0;
+  filter: none;
+}
+
+.contact-us-arrow img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .contact-us {
+    padding: 30px 15px;
+  }
+
+  .contact-us-heading {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  .contact-us-cards-wrapper {
+    grid-template-columns: 1fr;
+    /* 1 column on tablets and smaller */
+    gap: 15px;
+  }
+
+  .contact-us-item {
+    padding: 15px 20px;
+    font-size: 16px;
+    min-height: 70px;
+  }
+
+  .contact-us-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+  }
+
+  .contact-us-arrow {
+    width: 24px;
+    height: 24px;
+  }
+
+  .contact-us-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-us {
+    padding: 20px 10px;
+  }
+
+  .contact-us-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .contact-us-item {
+    padding: 15px;
+    font-size: 16px;
+    min-height: 60px;
+  }
+
+  .contact-us-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 12px;
+  }
+
+  .contact-us-text {
+    font-size: 16px;
+  }
+}

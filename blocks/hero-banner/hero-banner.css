@@ -1,0 +1,153 @@
+.hero-banner {
+  position: relative;
+  align-items: center;
+  min-height: 280px;
+  max-width: 1150px;
+  margin: 0 auto;
+  color: #fff;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+.hero-banner__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-banner__background picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  /* Center the image */
+}
+
+/* Default Content Layout */
+.hero-banner__content {
+  position: relative;
+  z-index: 1;
+  padding: 50px;
+  margin: 50px auto 40px;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  height: 100%;
+}
+
+.hero-banner__title {
+  font-size: 38px;
+  /* Adjusted size */
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+}
+
+.hero-banner__body {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 600px;
+}
+
+.hero-banner__body a {
+  color: #3b82f6;
+  /* Blue link color */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero-banner__body a:hover {
+  text-decoration: underline;
+}
+
+/* CTA Styles (if used) */
+.hero-banner__cta {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #00CC44;
+  color: #fff;
+  transition: background-color 0.2s;
+  margin-top: 20px;
+}
+
+.hero-banner__cta:hover {
+  background-color: #00A336;
+}
+
+/* Badge Styles (if used) */
+.hero-banner__badge {
+  background-color: #FFC107;
+  color: #333;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  /* Badge usually above title */
+}
+
+/* --- Variant: accessibility-gradient --- */
+/* This variant matches the screenshot: Black gradient on left fading to transparent on right */
+
+.hero-banner--accessibility-gradient .hero-banner__background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Gradient: Solid black from 0% to 30%, then fading to transparent at 70% */
+  background: linear-gradient(to right, #000 30%, rgba(0, 0, 0, 0) 70%);
+  z-index: 1;
+  /* Overlay on top of image but below content */
+}
+
+/* Content z-index handled by natural stacking context */
+
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .hero-banner {
+    min-height: auto;
+    flex-direction: column;
+  }
+
+  .hero-banner__background {
+    position: relative;
+    height: 200px;
+    /* Fixed height for image area on mobile */
+    order: 1;
+    /* Image first? or text first? Standard is stacked. */
+  }
+
+  .hero-banner--accessibility-gradient .hero-banner__background::after {
+    /* On mobile, maybe a bottom-up gradient or simpler overlay? */
+    background: linear-gradient(to top, #000 0%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  .hero-banner__content {
+    background-color: #000;
+    /* Solid background for text area on mobile */
+    padding: 30px 20px;
+    order: 2;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-banner__title {
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,132 @@
+.answers-advice-container {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin: 40px auto;
+}
+
+.answers-advice {
+    background-color: #fff;
+    width: 100%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.answers-advice-main-heading {
+    margin-bottom: 30px;
+}
+
+.answers-advice-main-heading h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a2b53;
+    /* Dark Blue */
+    margin: 0;
+}
+
+.answers-advice-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.answers-advice-card {
+    background-color: #fff;
+    border: 1px solid #e1e9f0;
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 1;
+    min-width: 300px;
+    /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+}
+
+.answers-advice-card-header {
+    background-color: #f6faff;
+    /* Light Blue Header */
+    padding: 35px 24px;
+    border-bottom: 1px solid #e1e9f0;
+}
+
+.answers-advice-card-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a2b53;
+}
+
+.answers-advice-card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.answers-advice-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* Removed bottom margin */
+    flex-grow: 1;
+}
+
+.answers-advice-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+    color: #555;
+    font-size: 15px;
+}
+
+.answers-advice-list li a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.answers-advice-list li a:hover {
+    color: #007BFF;
+}
+
+/* Custom Bullet Point (Blue Dot) */
+.answers-advice-list li::before {
+    content: "•";
+    color: #007BFF;
+    /* Blue bullet */
+    font-size: 28px;
+    /* Increased size */
+    position: absolute;
+    left: 0;
+    top: -8px;
+    /* Adjust vertical alignment for larger bullet */
+}
+
+.answers-advice-card-footer {
+    margin-top: 0;
+    padding: 0 24px 24px 24px;
+    /* Left padding 24px to align with bullets */
+}
+
+.answers-advice-card-footer a {
+    color: #006ae0;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.answers-advice-card-footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .answers-advice-grid {
+        flex-direction: column;
+    }
+
+    .answers-advice-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

@@ -1,9 +1,10 @@
 /* Main Block Container */
 .sim-deals {
     background-color: #1a2b5b;
+
     /* Dark Blue */
     color: #fff;
-    padding: 10px 20px 50px 20px;
+    padding: 10px 20px 50px;
     text-align: center;
 }
 
@@ -64,6 +65,7 @@
 
 .sim-deals-subtitle a {
     color: #4da6ff;
+
     /* Light blue link color */
     text-decoration: none;
 }
@@ -89,6 +91,7 @@
     flex-direction: column;
     align-items: center;
     width: 200px;
+
     /* Fixed width for better alignment */
 }
 
@@ -96,6 +99,7 @@
 .sim-deals-icon {
     width: 100px;
     height: 100px;
+
     /* Brighter Blue Circle */
     border-radius: 50%;
     display: flex;
@@ -113,6 +117,7 @@
     width: 100%;
     height: auto;
     object-fit: contain;
+
     /* Ensure icons are white if they aren't already */
 }
 
@@ -125,7 +130,7 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .sim-deals-title {
         font-size: 32px;
     }

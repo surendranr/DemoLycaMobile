@@ -1,0 +1,163 @@
+A. Section Header
+
+Title: Already with Lyca?
+
+Subtitle: Add credit to your account or renew your plan.
+
+Purpose:
+➡ Clearly indicates this is for existing customers only
+
+B. Action Selector (Primary Buttons)
+
+Three mutually exclusive actions:
+
+Button	Action Type	Internal Meaning
+Top up (default active)	CTA	Add balance
+Renew plan	CTA	Renew existing bundle
+Switch to Pay monthly	CTA	Convert plan type
+
+🔹 Behavior
+
+Works like tabs
+
+Only one action active at a time
+
+Active state controls:
+
+API endpoint
+
+Redirect URL
+
+Validation rules
+
+C. MSISDN Input Field (Phone Number)
+
+Structure
+
+[ +44 ] [ Enter lyca number & get started ] [ → ]
+
+Element	Purpose
+Country code (+44)	Fixed for UK
+Input field	Lycamobile number (MSISDN)
+Arrow button	Form submit trigger
+D. Secondary CTA
+
+Text: Track your usage on the go! Download our app →
+
+Type: Outbound link (App Store / Play Store)
+
+2️⃣ Data Model (What the Form Captures)
+{
+  "countryCode": "+44",
+  "msisdn": "7412345678",
+  "action": "topup" | "renew" | "paymonthly",
+  "source": "web"
+}
+
+3️⃣ Frontend Validation Logic
+A. Number Validation
+
+Before submission:
+
+function validateMsisdn(number) {
+  return /^[0-9]{9,10}$/.test(number);
+}
+
+
+Rules:
+
+Numbers only
+
+No spaces
+
+UK mobile length
+
+Cannot start with 0 (already implied by +44)
+
+❌ Invalid → show inline error
+✅ Valid → proceed
+
+B. Action State Handling
+let selectedAction = 'topup';
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    selectedAction = btn.dataset.action;
+    updateActiveUI(btn);
+  });
+});
+
+4️⃣ Submission Logic (Critical Part)
+A. Single Form → Multiple Flows
+
+When user clicks →
+
+submitForm() {
+  if (!validateMsisdn(msisdn)) return;
+
+  switch (selectedAction) {
+    case 'topup':
+      redirectToTopup(msisdn);
+      break;
+    case 'renew':
+      redirectToRenew(msisdn);
+      break;
+    case 'paymonthly':
+      redirectToPayMonthly(msisdn);
+      break;
+  }
+}
+
+B. Redirect-Based Submission (Lyca Pattern)
+
+Lyca does NOT submit via HTML form POST.
+It uses URL redirection with query params.
+
+1️⃣ Top Up
+/en/topup?msisdn=447412345678
+
+2️⃣ Renew Plan
+/en/renew?msisdn=447412345678
+
+3️⃣ Switch to Pay Monthly
+/en/pay-monthly?msisdn=447412345678
+
+
+✔ Backend validates:
+
+Active SIM
+
+Country
+
+Account status
+
+5️⃣ Error Handling Flow
+Scenario	Handling
+Invalid number	Inline validation message
+Non-Lyca number	Backend error page
+Suspended SIM	Backend message
+API failure	Generic error redirect
+
+Frontend only validates format, not ownership.
+
+6️⃣ Accessibility & UX Notes
+
+Buttons are role="tab"
+
+Arrow button is actual <button>
+
+Input supports inputmode="numeric"
+
+Placeholder disappears on focus
+
+Keyboard submit (Enter key supported)
+
+7️⃣ How to Implement This in AEM EDS / Custom JS
+
+If you want, I can next provide:
+✅ Exact JS logic for EDS block
+✅ Google Docs authoring structure for this form
+✅ EDS-compatible HTML generation in decorate(block)
+✅ Mock API for local testing
+
+Just tell me which one you want next.

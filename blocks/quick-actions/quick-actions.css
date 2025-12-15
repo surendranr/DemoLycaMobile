@@ -1,0 +1,223 @@
+/* quick-actions.css */
+
+.quick-actions-container {
+    padding: 60px 20px;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Background Hearts (Decorative) - using simplified CSS shapes/images for now */
+/* In a real scenario, these would be background images on the container or pseudo-elements */
+.quick-actions-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background-image: url('https://www.lycamobile.co.uk/assets/images/hearts-bg.svg');
+    /* Placeholder if available, else standard fallback */
+    background-repeat: no-repeat;
+    background-position: right center;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@media (max-width: 900px) {
+    .quick-actions-container::before {
+        opacity: 0.1;
+        /* Fade on mobile */
+    }
+}
+
+.quick-actions-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header */
+.quick-actions h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #1c273c;
+    /* Dark Blue */
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.quick-actions p.subtitle {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Tabs */
+.quick-actions-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.quick-actions-tab {
+    background: transparent;
+    border: 1px solid #c0c4cc;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1c273c;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.quick-actions-tab:hover {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.quick-actions-tab.active {
+    background-color: #0066cc;
+    /* Lyca Blue */
+    color: #fff;
+    border-color: #0066cc;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+/* Form Area */
+.quick-actions-form {
+    max-width: 500px;
+    margin: 0 auto 30px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 5px;
+    width: 100%;
+    max-width: 500px;
+    height: 56px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.input-group:focus-within {
+    border-color: #0066cc;
+}
+
+.input-group-addon {
+    padding: 0 15px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 500;
+    background: #f9f9f9;
+    /* Slight bg for country code */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #eee;
+    border-radius: 2px 0 0 2px;
+}
+
+.input-group-field {
+    flex: 1;
+    border: none;
+    padding: 0 15px;
+    font-size: 16px;
+    outline: none;
+    color: #333;
+}
+
+.input-group-field::placeholder {
+    color: #999;
+}
+
+/* Arrow Button */
+.input-group-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1c273c;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+
+
+.input-group-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Error Message */
+.error-message {
+    color: #d32f2f;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+    /* Hidden by default */
+    text-align: left;
+    max-width: 500px;
+    margin: 5px auto 0;
+    padding-left: 10px;
+}
+
+/* Footer */
+.quick-actions-footer {
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.quick-actions-footer a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.quick-actions-footer a:hover {
+    text-decoration: underline;
+}
+
+.app-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+@media (max-width: 600px) {
+    .quick-actions h2 {
+        font-size: 28px;
+    }
+
+    .quick-actions-tabs {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .quick-actions-tab {
+        width: 100%;
+        text-align: center;
+    }
+}

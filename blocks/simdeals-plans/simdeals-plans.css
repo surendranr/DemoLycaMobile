@@ -1,0 +1,244 @@
+.simdeals-plans-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.simdeals-plans {
+  padding: 40px 0;
+}
+
+.simdeals-plans-card {
+  background-color: #fcfdfe;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 300px;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #eee;
+  /* Default light border */
+}
+
+
+.simdeals-plans-card:hover {
+  border: 2px solid #00C853;
+}
+
+.simdeals-plans-dealtag {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  /* Align left */
+  transform: translateY(-50%);
+  /* Only center vertically relative to the top edge */
+  background-color: #482683;
+  /* Dark Purple */
+  color: #fff;
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.simdeals-plans-content-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.simdeals-plans-header {
+  background: #eff8ff;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.simdeals-plans-details {
+  text-align: left;
+}
+
+.simdeals-plans-plan-name {
+  color: #6C757D;
+  font-size: 16px;
+  margin: 0;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.simdeals-plans-data-amount {
+  font-weight: 800;
+  line-height: 1;
+  color: #000;
+}
+
+.simdeals-plans-data-label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.simdeals-plans-price-info {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.simdeals-plans-icons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.simdeals-plans-icons img {
+  width: 24px;
+  height: 24px;
+}
+
+.simdeals-plans-old-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.simdeals-plans-new-price {
+  font-size: 28px;
+  font-weight: 800;
+  color: #333;
+  line-height: 1;
+}
+
+.simdeals-plans-price-unit {
+  font-size: 13px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.simdeals-plans-features {
+  padding: 0;
+  list-style: none;
+  margin: 1.375rem 1.5rem .5rem;
+}
+
+.simdeals-plans-features li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #555;
+}
+
+.simdeals-plans-features .icon-checkmark {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300C853'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.simdeals-plans-buttons a.primary {
+  background: #08dc7d !important;
+  color: #344054 !important;
+}
+
+.simdeals-plans-buttons a.secondary {
+  border: 1px solid #006ae0 !important;
+  color: #006ae0 !important;
+}
+
+.simdeals-plans-viewmore {
+  text-align: right;
+  padding-right: 24px;
+}
+
+.simdeals-plans-viewmore a {
+  color: #007BFF;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.simdeals-plans-buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5rem;
+}
+
+.simdeals-plans-buttons .button {
+  padding: 14px 20px;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.simdeals-plans-buttons .primary {
+  background-color: #00C853;
+  /* Green button */
+  color: #fff;
+  border: 1px solid #00C853;
+}
+
+.simdeals-plans-buttons .primary:hover {
+  background-color: #00B54B;
+}
+
+.simdeals-plans-buttons .secondary {
+  background-color: #fff;
+  color: #007BFF;
+  border: 1px solid #007BFF;
+}
+
+.simdeals-plans-buttons .secondary:hover {
+  background-color: #f5faff;
+}
+
+.simdeals-plans-offer-footer {
+  text-align: center;
+  font-size: 13px;
+  /* Slightly easier to read */
+  color: #6d8eaf;
+  /* Softer blue-grey */
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  margin-top: 0.5rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #eff8ff;
+  font-weight: 500;
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .simdeals-plans-card {
+    /* (100% - 20px gap) / 2 columns */
+    width: calc((100% - 20px) / 2);
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .simdeals-plans-card {
+    max-width: 95%;
+  }
+
+  .simdeals-plans-data-amount {
+    font-size: 32px;
+  }
+}

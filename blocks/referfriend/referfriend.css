@@ -1,11 +1,13 @@
 .referfriend {
     background-color: #007bff;
+
     /* Blue background from screenshot */
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 80px;
+
     /* Adjust as needed */
 }
 
@@ -30,16 +32,20 @@
 
 .refer-friend-icon.end {
     margin-left: 10px;
+
     /* Ensure spacing for the end icon/arrow */
     font-size: 24px;
+
     /* Default size for arrow */
     line-height: 1;
+
     /* Aligns arrow properly */
 }
 
 .refer-friend-icon svg,
 .refer-friend-icon img {
     fill: #fff;
+
     /* For SVG icons */
     width: 24px;
     height: 24px;
@@ -65,10 +71,11 @@
 }
 
 /* The previous .refer-friend-arrow is now handled by .refer-friend-icon.end */
+
 /* If there's specific arrow image styling, it would go here targeting img within .refer-friend-icon.end */
 
 /* Mobile Responsiveness */
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .referfriend {
         padding: 15px;
     }

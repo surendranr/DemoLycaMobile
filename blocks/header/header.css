@@ -63,6 +63,7 @@ header nav .nav-brand {
 header nav .nav-brand img {
   width: auto;
   height: 24px;
+
   /* Smaller on mobile */
   max-width: 120px;
   object-fit: contain;
@@ -84,6 +85,7 @@ header nav .nav-hamburger button {
   padding: 0;
   background-color: transparent;
   color: #00AEEF;
+
   /* Lyca Blue */
   width: 24px;
   overflow: hidden;
@@ -100,6 +102,7 @@ header nav[aria-expanded='true'] .nav-hamburger button svg {
 .header-lang,
 .header-dropdown-icon {
   display: none !important;
+
   /* Hide specific tools on mobile */
 }
 
@@ -119,11 +122,11 @@ header nav .nav-sections {
 header nav[aria-expanded='true'] .nav-sections {
   display: block;
   visibility: visible;
+
   /* align-self: start; */
 }
 
 @media (width >=900px) {
-
   /* Show Desktop Tools */
   .header-topup-btn,
   .header-lang,
@@ -141,6 +144,7 @@ header nav[aria-expanded='true'] .nav-sections {
     align-items: center;
     gap: 0 20px;
     max-width: 1440px;
+
     /* Wider to fit everything */
     padding: 0 32px;
   }
@@ -156,6 +160,7 @@ header nav[aria-expanded='true'] .nav-sections {
     visibility: visible;
     margin-right: 16px;
     order: 2;
+
     /* Hamburger Second */
   }
 
@@ -177,13 +182,16 @@ header nav[aria-expanded='true'] .nav-sections {
     visibility: visible;
     white-space: nowrap;
     flex: 1 1 auto;
+
     /* Take remaining space */
     order: 3;
+
     /* Nav Links Third */
   }
 
   header nav .nav-tools {
     order: 4;
+
     /* Tools Last */
   }
 
@@ -203,6 +211,7 @@ header nav[aria-expanded='true'] .nav-sections {
     width: 6px;
     height: 6px;
     border: 2px solid #001871;
+
     /* Dark Blue */
     border-radius: 0 1px 0 0;
     border-width: 2px 2px 0 0;
@@ -229,6 +238,7 @@ header nav[aria-expanded='true'] .nav-sections {
     position: relative;
     font-weight: 700;
     color: #001871;
+
     /* Lyca Dark Blue */
     font-size: 16px;
   }
@@ -252,7 +262,7 @@ header nav[aria-expanded='true'] .nav-sections {
     padding: 16px;
     background-color: var(--light-color);
     white-space: initial;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
   }
 
   header nav .nav-sections .default-content-wrapper>ul>li>ul::before {
@@ -287,6 +297,7 @@ header nav .nav-tools {
 
 .header-topup-btn {
   background-color: #007AFF;
+
   /* Bright Blue */
   color: white !important;
   padding: 10px 20px;
@@ -315,6 +326,7 @@ header nav .nav-tools {
 .header-dropdown-icon {
   color: #007AFF;
   margin-left: -10px;
+
   /* Pull closer to user icon */
   cursor: pointer;
 }

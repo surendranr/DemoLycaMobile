@@ -2,6 +2,7 @@
     position: relative;
     width: 100%;
     margin-bottom: 40px;
+
     /* Ensure it doesn't overflow the page width destructively */
     overflow: hidden;
 }
@@ -9,9 +10,11 @@
 .banner-carousel-wrapper {
     display: flex;
     width: 100%;
+
     /* Use transform for sliding */
     transform: translateX(0);
     transition: transform 0.8s ease-in-out;
+
     /* Hide scrollbar */
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -25,6 +28,7 @@
     flex: 0 0 100%;
     width: 100%;
     position: relative;
+
     /* Ensure image content doesn't break layout */
     display: flex;
     justify-content: center;
@@ -47,6 +51,7 @@
     height: auto;
     display: block;
     object-fit: cover;
+
     /* Basic max-height if needed, but banners usually define their own */
 }
 
@@ -67,7 +72,8 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgb(255 255 255 / 50%);
+
     /* Semi-transparent white */
     border: none;
     cursor: pointer;
@@ -76,11 +82,12 @@
 }
 
 .banner-carousel-dot:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgb(255 255 255 / 80%);
 }
 
 .banner-carousel-dot.active {
     background-color: #fff;
+
     /* Active white */
     transform: scale(1.2);
 }
@@ -91,9 +98,12 @@
     top: 50%;
     transform: translateY(-50%);
     background: transparent;
+
     /* Changed to transparent as per request to rely on icon, or maybe white circle with icon inside? Let's assume white circle for visibility, or just the icon? User said "background highlighted as blue", implies they might just want the icon. But standard arrows usually have bg. Let's keep bg white/transparent but use the image. The URL is just an arrow. It likely needs a background to be visible over varied banners. */
+
     /* Let's keep the circle background but fix the highlight issue */
     width: 48px;
+
     /* Slightly larger for touch */
     height: 48px;
     border-radius: 50%;
@@ -103,6 +113,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 48px;
+
     /* Adjust size of the arrow icon inside */
     transition: background-color 0.3s;
 
@@ -113,6 +124,7 @@
 
 .banner-carousel-arrow:focus {
     outline: none;
+
     /* Ensure no blue outline on focus */
 }
 
@@ -130,7 +142,7 @@
     background-image: url('https://www.lycamobile.co.uk/_next/static/media/slider_right_arrow.0d76d2f7.svg');
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
     .banner-carousel-arrow {
         width: 36px;
         height: 36px;

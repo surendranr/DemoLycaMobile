@@ -1,8 +1,9 @@
 /* Main Block Container */
 .help-options {
     background-color: #f0f8ff;
+
     /* Light Blue similar to screenshot */
-    padding: 10px 20px 40px 20px;
+    padding: 10px 20px 40px;
     text-align: center;
 }
 
@@ -19,6 +20,7 @@
     font-size: 36px;
     font-weight: 800;
     color: #1a2b5b;
+
     /* Dark Blue */
     margin: 0;
 }
@@ -73,20 +75,22 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .help-options-grid {
         gap: 40px;
     }
 
     .help-options-item {
         width: 45%;
+
         /* 2 per row on tablet/mobile */
     }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
     .help-options-item {
         width: 100%;
+
         /* Stack on very small screens */
     }
 

@@ -6,7 +6,7 @@
 }
 
 .recent-blogs-wrapper {
-    height: -moz-fit-content;
+    height: fit-content;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -20,6 +20,7 @@
 .recent-blogs-heading {
     text-align: center;
     color: #384c72;
+
     /* Color from "Why Lyca?" */
     font-family: GTEestiLCDisplayBold, sans-serif;
     font-size: 40px;
@@ -35,7 +36,7 @@
     gap: 30px;
 }
 
-@media (min-width: 900px) {
+@media (width >= 900px) {
     .recent-blogs-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -45,7 +46,7 @@
 .recent-blogs-card {
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -60,6 +61,7 @@
 .recent-blogs-image {
     width: 100%;
     height: 220px;
+
     /* Fixed height for consistency */
     overflow: hidden;
 }
@@ -84,27 +86,33 @@
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
+
     /* Ensure equal height text areas align if using flex on card */
 }
 
 /* Card Title */
 .recent-blogs-card-title {
     font-size: 1.125rem;
+
     /* ~18px */
     font-weight: 700;
     color: #1c3f94;
+
     /* Dark Blue */
-    margin: 0 0 16px 0;
+    margin: 0 0 16px;
     line-height: 1.4;
 }
 
 /* Meta (Date | Author) */
 .recent-blogs-card-meta {
     font-size: 0.875rem;
+
     /* ~14px */
     color: #757575;
+
     /* Grey */
     margin: 0;
     margin-top: auto;
+
     /* Push to bottom */
 }
